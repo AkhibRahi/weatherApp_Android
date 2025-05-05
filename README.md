@@ -2,25 +2,53 @@
 A cross-platform Weather App built using React Native. It allows users to check the current weather for any location. The app supports light/dark modes, uses Redux Toolkit for global state management, and follows a clean architecture.
 
 **Features**
- Search weather by city name
- Display current weather details (temperature, humidity, condition, etc.)
- Light and dark mode support
- Dynamic UI styling using React Context
- System theme detection and toggle
- Singleton Pattern for centralized API management
- Clean architecture with reusable components
- Smooth user experience with loading/error handling
+Search real-time weather by city name
+Display temperature, humidity, and weather conditions
+Dark and light mode support
+Android-optimized layout and user experience
+Dynamic UI styling with centralized theme management
+Stores and loads last searched city after reopening
+Reusable components and clean code structure
+Singleton pattern for consistent API access
+Unit tests included
 
 **My Approach**
-**Architecture**: Utilized Redux Toolkit for global theme state and React Context API for theming and styling.
-**Dark Mode Support**: Integrated system color scheme (Appearance.getColorScheme) with a manual toggle using Redux.
-**API Management**: Weather data is fetched from OpenWeatherMap API, managed via a Singleton Pattern class to ensure a single, reusable API service instance throughout the app.
-**Component Design**: Modular and reusable components like ModeTogglerButton enhance maintainability and scalability.
-**Error Handling**: Gracefully handles loading and API error states for a better UX.
-**Clean Code**: Followed best practices, using TypeScript (if applicable), and split responsibilities across files for readability.
+**Architecture**: Followed clean code architecture – separating logic into components, API services, contexts, Redux slices, and hooks.
+**Theme Management**: Used Redux Toolkit to manage dark/light mode with optional system detection via useColorScheme.
+**State Management**: Chose Redux Toolkit to manage theme and search data. AsyncStorage ensures data persistence.
+**API Handling**: Managed via a Singleton API manager for maintainability.
+**UI Design**: Built reusable, clean components styled dynamically based on the theme.
+
+**State Management**
+Redux Toolkit
+Manages:
+Theme (dark/light)
+Search history (latest city searched)
+AsyncStorage stores last searched city, which gets auto-loaded on app restart.
+
 
 🔗 **API Used**
 OpenWeatherMap API : https://openweathermap.org/
+
+**Project Structure Overview**:
+src/
+├── api/                 # Singleton class for API handling
+├── components/          # Reusable UI components
+├── contexts/            # Theme Context
+├── redux/               # Redux Toolkit setup
+├── screens/             # Main UI screens
+└── utils/               # Utility functions
+
+Clean and maintainable codebase
+Commented, readable, and developer-friendly
+
+**Testing**
+Basic unit tests added for core functionality
+Tools: jest, @testing-library/react-native
+
+**Bonus Feature**
+Dark Mode Toggle
+Users can manually toggle dark/light mode, or the app auto-detects system theme using useColorScheme.
 
 **Setup Instructions**:
 **1. Clone the Repository**
@@ -48,22 +76,6 @@ npm run ios
 # or
 yarn ios
 
-**Project Structure Overview**:
-src/
-├── api/                 # Singleton class for API handling
-├── components/          # Reusable UI components
-├── contexts/            # Theme Context
-├── redux/               # Redux Toolkit setup
-├── screens/             # Main UI screens
-└── utils/               # Utility functions
-
-**Technologies Used**
-React Native
-Redux Toolkit
-React Context API
-OpenWeatherMap API
-Axios 
-react-native-vector-icons
 
 **Troubleshooting**:
 **Make sure your environment is set up correctly: **
