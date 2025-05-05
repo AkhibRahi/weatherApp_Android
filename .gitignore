@@ -1,8 +1,6 @@
 # OSX
 #
 .DS_Store
-.env
-
 
 # Xcode
 #
@@ -75,3 +73,5 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+# react-native-config codegen
+ios/tmp.xcconfig

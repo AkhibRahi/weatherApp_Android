@@ -1,6 +1,7 @@
 import {HttpClient} from './http_client';
 import Config from 'react-native-config';
 
+console.log(Config);
 export default class WeatherWebServices extends HttpClient {
   private static classInstance?: WeatherWebServices;
 

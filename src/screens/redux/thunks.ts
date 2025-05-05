@@ -15,16 +15,17 @@ export const getWeatherData = createAsyncThunk<void, string>(
 
       const baseUrl = endpoints.weatherBaseUrl;
 
-      const response = await WeatherWebServices.getInstance(baseUrl).getWeather(city);
-
+      const response = await WeatherWebServices.getInstance(baseUrl).getWeather(
+        city,
+      );
       if (!response) {
         dispatch(weatherDataError('No weather data received'));
         return;
       }
 
       dispatch(weatherDataResponse(response));
-    } catch (error) {
-      dispatch(weatherDataError(error));
+    } catch (error: any) {
+      dispatch(weatherDataError(error?.response?.data?.message));
     }
   },
 );

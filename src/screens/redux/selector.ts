@@ -1,5 +1,8 @@
-const selectWeatherData = (state: any) => state.weatherReducer.weatherData;
-const selectWeatherLoading = (state: any) => state.weatherReducer.loading;
-const selectWeatherError = (state: any) => state.weatherReducer.error;
+import {RootState} from '../../store/store';
+
+const selectWeatherData = (state: RootState) =>
+  state.weatherReducer.weatherData;
+const selectWeatherLoading = (state: RootState) => state.weatherReducer.loading;
+const selectWeatherError = (state: RootState) => state.weatherReducer.error;
 
 export {selectWeatherData, selectWeatherLoading, selectWeatherError};

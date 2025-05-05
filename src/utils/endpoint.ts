@@ -1,5 +1,3 @@
-import Config from 'react-native-config';
-
 const endpoints = {
   weatherBaseUrl: 'https://api.openweathermap.org/data/2.5',
 
